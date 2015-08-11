@@ -2,8 +2,8 @@ FROM node
 MAINTAINER mosluce <mosluce@gmail.com>
 
 RUN npm install -g forever
-RUN mkdir -p /var/app
 RUN mkdir -p /var/log/app
+RUN mkdir -p /var/app
 
 ENV "APP=bin/www"
 ENV "PORT=8080"
