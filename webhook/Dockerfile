@@ -2,12 +2,6 @@ FROM mosluce/pm2
 
 WORKDIR /app
 
-#prepare
-RUN npm install github-webhook-handler
-
-#port
-EXPOSE 7777
-
 #env
 ENV "SECRET=jkaljldjLDlkcjsldsjj1epwewdjkqljaLQS" 
 

@@ -10,6 +10,7 @@ EXPOSE 8080
 ENV PORT 8080
 ENV NODE_ENV production
 ENV APP bin/www
+ENV MONGO_HOST mongo
 
 #voluems
 VOLUME /app
