@@ -1,6 +1,3 @@
 #!/bin/sh
 
-cd /app
-#forever -o out.log -e err.log -w app.js
-
-node app.js
+pm2 start /app/app.js --watch --name app --log /log/access.log --error /log/error.log --output /log/output.log

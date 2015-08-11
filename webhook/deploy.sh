@@ -1,4 +1,4 @@
 #!/bin/sh
-cd /target
+cd /source
 git pull
 npm install

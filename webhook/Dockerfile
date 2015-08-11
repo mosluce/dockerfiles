@@ -1,24 +1,26 @@
-FROM node
-
-RUN mkdir /app
+FROM mosluce/pm2
 
 WORKDIR /app
 
+#prepare
 RUN npm install github-webhook-handler
-RUN npm install -g forever
 
-COPY app.js /app/app.js
-COPY run.sh /run.sh
-
-RUN chmod +x /run.sh
-
+#port
 EXPOSE 7777
 
+#env
 ENV "SECRET=jkaljldjLDlkcjsldsjj1epwewdjkqljaLQS" 
 
-VOLUME /target
+#volume
+VOLUME /source
 
-COPY deploy.sh /deploy.sh
-RUN chmod +x /deploy.sh
+#scripts
+COPY app.js /app/app.js
+#startup
+COPY run.sh /run.sh
+RUN chmod +x /run.sh
+#deploy
+COPY deploy.sh /app/deploy.sh
+RUN chmod +x /app/deploy.sh
 
 CMD ["/run.sh"]
