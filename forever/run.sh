@@ -1,9 +1,11 @@
 #!/bin/sh
 
-cd /var/app
+#
+cd /app
 
+#update packages
 npm install
 
-touch .foreverignore
-
-forever -o /var/log/app/out.log -e /var/log/app/err.log -w $APP
+#run app
+#pm2 start bin/www --watch --name app --log /log/access.log --error /log/error.log --output /log/output.log --no-daemon
+forever -o /log/out.log -e /log/err.log bin/www

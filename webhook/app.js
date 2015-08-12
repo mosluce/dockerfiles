@@ -19,7 +19,7 @@ handler.on('push', function (event) {
     event.payload.repository.name,
     event.payload.ref);
     
-  exec("./deploy.sh", console.log);
+  exec("/deploy.sh", console.log);
 });
 
 handler.on('issues', function (event) {

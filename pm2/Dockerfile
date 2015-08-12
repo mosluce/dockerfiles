@@ -1,5 +1,5 @@
 FROM node
-MAINTAINER mosluce
+MAINTAINER mosluce <mosluce@gmail.com>
 
 #prepare
 RUN npm install -g pm2
